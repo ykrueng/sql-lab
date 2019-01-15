@@ -79,8 +79,6 @@ GROUP BY Customers.City
 ```
 DELETE FROM Customers
 WHERE CustomerID NOT IN (
-	SELECT Customers.CustomerID FROM Customers 
-    INNER JOIN Orders
-    ON Customers.CustomerID = Orders.CustomerID
+	SELECT Customers.CustomerID FROM Orders
 );
 ```
